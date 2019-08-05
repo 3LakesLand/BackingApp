@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_fl">16dp</dimen>
+    <dimen name="image_width">150dp</dimen>
+    <dimen name="image_height">150dp</dimen>
+    <dimen name="no_image_found_tv_text_size">12sp</dimen>
+    <dimen name="no_internet_connection_tv_text_size">20sp</dimen>
+    <dimen name="progress_bar_width">100dp</dimen>
+    <dimen name="progress_bar_height">100dp</dimen>
+
+</resources>

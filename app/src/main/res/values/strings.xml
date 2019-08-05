@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BackingApp</string>
+    <string name="grid_span_count">2</string>
+    <string name="no_internet_connection">No internet connection!</string>
+    <string name="recipe">Recipe</string>
+</resources>
