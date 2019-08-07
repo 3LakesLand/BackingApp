@@ -24,7 +24,7 @@ import butterknife.Unbinder;
 
 public class MainActivity extends AppCompatActivity implements RecipesAdapter.OnRecipeListener {
 
-    @BindView(R.id.recycle_view)
+    @BindView(R.id.recipes_rv)
     RecyclerView recyclerView;
 
     //for ButterKnife framework

@@ -32,40 +32,14 @@ public class SelectRecipesAsyncTask extends AsyncTask<Void, Void, Void> {
 
         ApiRecipesDB apiRecipesDB = ApiClient.getInstance().create(ApiRecipesDB.class);
 
-        Call<List<RecipeEntity>> call  = apiRecipesDB.getRecipesRequest();
+        Call<List<RecipeEntity>> call = apiRecipesDB.getRecipesRequest();
 
         try {
             Response<List<RecipeEntity>> response = call.execute();
             if (response.isSuccessful() && response.body() != null) {
                 List<RecipeEntity> recipeEntityList = response.body();
-                List<Recipe> recipeList = new ArrayList<>();
-                for (RecipeEntity recipeEntity: recipeEntityList) {
-                    List<Ingredient> ingredientList = new ArrayList<>();
-                    for (IngredientEntity ingredientEntity: recipeEntity.getIngredients()) {
-                        Ingredient ingredient = new Ingredient(
-                                ingredientEntity.getQuantity(),
-                                ingredientEntity.getMeasure(),
-                                ingredientEntity.getIngredient());
-                        ingredientList.add(ingredient);
-                    }
-                    List<Step> stepList = new ArrayList<>();
-                    for (StepEntity stepEntity: recipeEntity.getSteps()) {
-                        Step step = new Step(
-                                stepEntity.getId(),
-                                stepEntity.getShortDescription(),
-                                stepEntity.getDescription(),
-                                stepEntity.getVideoURL(),
-                                stepEntity.getThumbnailURL());
-                        stepList.add(step);
-                    }
-                    Recipe recipe = new Recipe(
-                            recipeEntity.getId(),
-                            recipeEntity.getName(),
-                            ingredientList,
-                            stepList,
-                            recipeEntity.getServings());
-                    recipeList.add(recipe);
-                }
+
+                List<Recipe> recipeList = getRecipeList(recipeEntityList);
                 recipeListMutableLiveData.postValue(recipeList);
             }
         } catch (IOException e) {
@@ -74,5 +48,38 @@ public class SelectRecipesAsyncTask extends AsyncTask<Void, Void, Void> {
         }
 
         return null;
+    }
+
+    private List<Recipe> getRecipeList(List<RecipeEntity> recipeEntityList) {
+        List<Recipe> recipeList = new ArrayList<>();
+        for (RecipeEntity recipeEntity : recipeEntityList) {
+            List<Ingredient> ingredientList = new ArrayList<>();
+            for (IngredientEntity ingredientEntity : recipeEntity.getIngredients()) {
+                Ingredient ingredient = new Ingredient(
+                        ingredientEntity.getQuantity(),
+                        ingredientEntity.getMeasure(),
+                        ingredientEntity.getIngredient());
+                ingredientList.add(ingredient);
+            }
+            List<Step> stepList = new ArrayList<>();
+            for (StepEntity stepEntity : recipeEntity.getSteps()) {
+                Step step = new Step(
+                        stepEntity.getId(),
+                        stepEntity.getShortDescription(),
+                        stepEntity.getDescription(),
+                        stepEntity.getVideoURL(),
+                        stepEntity.getThumbnailURL());
+                stepList.add(step);
+            }
+            Recipe recipe = new Recipe(
+                    recipeEntity.getId(),
+                    recipeEntity.getName(),
+                    ingredientList,
+                    stepList,
+                    recipeEntity.getServings());
+            recipeList.add(recipe);
+        }
+        return recipeList;
+
     }
 }
