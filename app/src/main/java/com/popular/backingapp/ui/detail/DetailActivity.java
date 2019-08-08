@@ -32,6 +32,14 @@ public class DetailActivity extends AppCompatActivity {
             fragmentManager.beginTransaction()
                     .add(R.id.steps_fl, stepsFragment)
                     .commit();
+
+            //Set recipe name in the toolbar
+            if (getSupportActionBar() != null) {
+                String actionBarText = getString(R.string.appwidget_text) + ": " +
+                        RecipeModel.getInstance().getCurrentSelectedRecipe().getName();
+                getSupportActionBar().setTitle(actionBarText);
+            }
+
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(getApplicationContext());
             int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(getApplicationContext(), IngredientsWidgetProvider.class));
             appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.widget_ingredients_lv);

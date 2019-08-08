@@ -7,11 +7,8 @@ import com.popular.backingapp.ui.model.Recipe;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
-
-
 import org.junit.rules.TestRule;
 
 import java.util.List;
@@ -31,7 +28,7 @@ public class SelectRecipesAsyncTaskTest {
 
 
     @Test
-    public void testRecipeList () {
+    public void testRecipeList() {
         List<Recipe> recipeList = recipeListMutableLiveData.getValue();
         Assert.assertNotNull(recipeList);
 

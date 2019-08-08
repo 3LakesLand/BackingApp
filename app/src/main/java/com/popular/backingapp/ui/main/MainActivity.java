@@ -4,9 +4,9 @@ package com.popular.backingapp.ui.main;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements RecipesAdapter.On
     private Unbinder unbinder;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements RecipesAdapter.On
     }
 
     private void loadRecipes() {
-        final RecipesAdapter recipesAdapter= new RecipesAdapter(this);
+        final RecipesAdapter recipesAdapter = new RecipesAdapter(this);
         recyclerView.setAdapter(recipesAdapter);
 
         final RecipesViewModel recipesViewModel = ViewModelProviders.of(this).get(RecipesViewModel.class);
@@ -88,4 +87,5 @@ public class MainActivity extends AppCompatActivity implements RecipesAdapter.On
         startActivity(intent);
 
     }
+
 }
