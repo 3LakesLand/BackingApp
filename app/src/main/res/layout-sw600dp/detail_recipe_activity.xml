@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
     <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:padding="8dp"
         android:id="@+id/ingredients_fl"
-        tools:layout="@layout/detail_ingredients_fragment"/>
+        android:layout_width="@dimen/ingredients_fl_sw600_width"
+        android:layout_height="match_parent"
+        android:layout_weight="@integer/ingredients_fl_sw600_weight"
+        android:padding="@dimen/ingredients_fl_sw600_padding"
+        tools:layout="@layout/detail_ingredients_fragment" />
 
     <View
-        android:layout_width="1dp"
+        android:layout_width="@dimen/line_width"
         android:layout_height="match_parent"
         android:background="@android:color/darker_gray" />
 
     <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:padding="8dp"
         android:id="@+id/steps_fl"
-        tools:layout="@layout/detail_steps_fragment"/>
+        android:layout_width="@dimen/steps_fl_sw600_width"
+        android:layout_height="match_parent"
+        android:layout_weight="@integer/steps_fl_sw600_weight"
+        android:padding="@dimen/steps_fl_sw600_padding"
+        tools:layout="@layout/detail_steps_fragment" />
 
 </LinearLayout>

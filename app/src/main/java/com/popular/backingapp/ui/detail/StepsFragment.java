@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.popular.backingapp.R;
 import com.popular.backingapp.ui.model.RecipeModel;
@@ -18,9 +19,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+/**
+ * The class shows the recipe steps of a recipe.
+ */
 public class StepsFragment extends Fragment implements StepsAdapter.OnStepListener {
     @BindView(R.id.steps_rv)
     RecyclerView stepsRecyclerView;
+    @BindView(R.id.heading_steps_tv)
+    TextView headingStepsView;
     //for ButterKnife framework
     private Unbinder unbinder;
 
@@ -34,6 +40,9 @@ public class StepsFragment extends Fragment implements StepsAdapter.OnStepListen
 
         //bind
         unbinder = ButterKnife.bind(this, rootView);
+
+        headingStepsView.setText(getString(R.string.recipe_steps));
+
 
         StepsAdapter stepsAdapter = new StepsAdapter(this);
         stepsRecyclerView.setAdapter(stepsAdapter);
@@ -54,6 +63,11 @@ public class StepsFragment extends Fragment implements StepsAdapter.OnStepListen
         unbinder.unbind();
     }
 
+    /**
+     * Calls the video display.
+     *
+     * @param step current recipe step
+     */
     @Override
     public void onStepClick(Step step) {
         RecipeModel.getInstance().setCurrentSelectedStep(step);

@@ -25,9 +25,9 @@
             android:id="@+id/show_video_bt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="show video"
-            android:textSize="10sp"/>
-
+            android:textSize="@dimen/show_video_bt_textsize"
+            tools:ignore="SmallSp"
+            tools:text="@string/show_video_bt_text_example" />
 
 
     </LinearLayout>

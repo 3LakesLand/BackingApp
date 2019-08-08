@@ -14,44 +14,75 @@ import com.popular.backingapp.ui.model.Recipe;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The adapter allows the loading and display the recipes.
+ */
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHolder> {
 
     private List<Recipe> recipeList;
     private OnRecipeListener onRecipeListener;
 
-    public RecipesAdapter(OnRecipeListener onRecipeListener) {
+    /**
+     * Constructor
+     *
+     * @param onRecipeListener for selecting the recipe
+     */
+    RecipesAdapter(OnRecipeListener onRecipeListener) {
         this.onRecipeListener = onRecipeListener;
         recipeList = new ArrayList<>();
     }
 
-    public void setRecipeList(List<Recipe> recipeList) {
+    void setRecipeList(List<Recipe> recipeList) {
         this.recipeList = recipeList;
     }
 
+    /**
+     * The method creates a View Holder object.
+     *
+     * @param viewGroup contains the application context
+     * @param viewType  - not used
+     * @return new View Holder object
+     */
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.main_grid_recipe_item, viewGroup, false);
         return new MyViewHolder(view);
     }
 
+    /**
+     * The View Holder binds the recipe data object.
+     *
+     * @param holder   current view holder
+     * @param position in the adapter
+     */
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.bind(recipeList.get(position));
 
     }
 
+    /**
+     * Count of all recipe objects.
+     *
+     * @return count
+     */
     @Override
     public int getItemCount() {
         return recipeList.size();
     }
 
 
-
+    /**
+     * Listener for selecting the recipe from the recipe overview list page.
+     */
     public interface OnRecipeListener {
         void onRecipeClick(Recipe recipe);
     }
 
+    /**
+     * The ViewHolder contains the recipe name and the cake image.
+     */
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView recipeTextView;
         private ImageView cakeImageView;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="ingredients_fl_sw600_weight">1</integer>
+    <integer name="steps_fl_sw600_weight">2</integer>
+    <integer name="steps_rv_item_count">9</integer>
+
+
+</resources>

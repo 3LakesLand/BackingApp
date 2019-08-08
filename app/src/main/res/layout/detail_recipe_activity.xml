@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:padding="8dp"
         android:id="@+id/ingredients_fl"
-        tools:layout="@layout/detail_ingredients_fragment"/>
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ingredients_fl_height"
+        android:padding="@dimen/ingredients_fl_padding"
+        tools:layout="@layout/detail_ingredients_fragment" />
 
     <FrameLayout
+        android:id="@+id/steps_fl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:id="@+id/steps_fl"
-        tools:layout="@layout/detail_steps_fragment"/>
+        android:padding="@dimen/steps_fl_padding"
+        tools:layout="@layout/detail_steps_fragment" />
 
 </LinearLayout>

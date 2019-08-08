@@ -21,6 +21,7 @@ import static org.hamcrest.Matchers.is;
 
 @RunWith(AndroidJUnit4.class)
 public class SelectActivityBasicTest {
+    private static final String NUTELLA_PIE = "Nutella Pie";
 
     @Rule
     public ActivityTestRule<MainActivity> activityTestRule =
@@ -29,21 +30,19 @@ public class SelectActivityBasicTest {
 
     @Test
     public void checkRecipesAreDisplayed() {
-        // Check that the recyclerview containing the recipes is displayed
         onView(withId(R.id.recipes_rv))
                 .check(matches(isDisplayed()));
     }
 
     @Test
     public void checkTheFirstRecipeIsNutellaPie() {
-        onData(is("Nutella Pie"))
+        onData(is(NUTELLA_PIE))
                 .inAdapterView(withId(R.id.recipes_rv))
                 .atPosition(0);
     }
 
     @Test
     public void checkStepsFromFirstRecipeAreDisplayed() {
-
         onView(withId(R.id.recipes_rv)).perform(actionOnItemAtPosition(0, click()));
         onView(withId(R.id.steps_rv)).check(matches(isDisplayed()));
     }

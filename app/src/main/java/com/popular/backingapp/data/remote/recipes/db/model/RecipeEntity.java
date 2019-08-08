@@ -46,7 +46,6 @@ public class RecipeEntity implements Parcelable {
     private String servings;
 
 
-
     /**
      * deserialization of RecipeEntity
      *

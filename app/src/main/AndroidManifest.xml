@@ -8,13 +8,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/baseline_cake_black_48"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/baseline_cake_black_48"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <receiver android:name=".IngredientsWidgetProvider">
+        <receiver android:name=".ui.widget.IngredientsWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -25,7 +25,7 @@
         </receiver>
 
         <service
-            android:name=".WidgetService"
+            android:name=".ui.widget.WidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <activity android:name=".ui.main.MainActivity">

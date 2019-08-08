@@ -9,8 +9,7 @@
     android:layout_marginBottom="@dimen/margin_fl"
     tools:context=".ui.main.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <android.support.v7.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/recipes_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,11 +18,12 @@
         app:spanCount="@string/grid_span_count"
         tools:listitem="@layout/main_grid_recipe_item" />
 
-    <!--TextView
-        android:id="@+id/empty_view"
+    <TextView
+        android:id="@+id/no_internet_found_tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/no_internet_connection"
-        android:textSize="@dimen/no_internet_connection_tv_text_size" /-->
+        android:textSize="@dimen/no_internet_connection_tv_text_size"
+        android:visibility="gone" />
 
 </FrameLayout>

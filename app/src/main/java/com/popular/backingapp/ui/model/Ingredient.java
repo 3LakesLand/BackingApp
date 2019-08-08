@@ -12,16 +12,15 @@ public class Ingredient {
 
     private String ingredient;
 
-    public String getQuantity() {
-        return quantity;
-    }
-
     public Ingredient(String quantity, String measure, String ingredient) {
         this.quantity = quantity;
         this.measure = measure;
         this.ingredient = ingredient;
     }
 
+    public String getQuantity() {
+        return quantity;
+    }
 
     public String getMeasure() {
         return measure;

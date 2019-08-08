@@ -13,5 +13,18 @@ Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     -->
     <dimen name="widget_margin">8dp</dimen>
+    <dimen name="ingredients_fl_height">150dp</dimen>
+    <dimen name="ingredients_fl_padding">8dp</dimen>
+    <dimen name="steps_fl_padding">8dp</dimen>
+    <dimen name="ingredients_fl_sw600_width">0dp</dimen>
+    <dimen name="ingredients_fl_sw600_padding">8dp</dimen>
+    <dimen name="line_width">1dp</dimen>
+    <dimen name="steps_fl_sw600_width">0dp</dimen>
+    <dimen name="steps_fl_sw600_padding">8dp</dimen>
+    <dimen name="show_video_bt_textsize">10sp</dimen>
+    <dimen name="widget_ll_padding">5dp</dimen>
+    <dimen name="widget_img_launcher_iv_width">32dp</dimen>
+    <dimen name="widget_img_launcher_iv_height">32dp</dimen>
+    <dimen name="last_viewed_ingredients_tv_padding">8dp</dimen>
 
 </resources>

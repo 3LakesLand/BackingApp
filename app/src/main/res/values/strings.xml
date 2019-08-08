@@ -4,5 +4,19 @@
     <string name="no_internet_connection">No internet connection!</string>
     <string name="recipe">Recipe</string>
     <string name="appwidget_text">BackingApp</string>
+    <string name="recipes_text">Recipes</string>
     <string name="add_widget">Add widget</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="servings_start">  (servings: </string>
+    <string name="servings_end">):</string>
+    <string name="recipe_steps">Recipe steps:</string>
+    <string name="Ingredients_text">Ingredients</string>
+    <string name="Ingredients_servings_example">Ingredients (servings: 8):</string>
+    <string name="show_video_bt_text_example">show video</string>
+    <string name="Recipe_steps_example">Recipe steps:</string>
+    <string name="widget_img_launcher_iv_cake">cake</string>
+    <string name="last_viewed_ingredients_tv_text">Last viewed ingredients</string>
+    <string name="cake_iv_cake">cake</string>
+
+
 </resources>

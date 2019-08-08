@@ -11,11 +11,11 @@ import android.net.NetworkInfo;
 public class ConnectionHelper {
     private static final ConnectionHelper ourInstance = new ConnectionHelper();
 
-    public static ConnectionHelper getInstance() {
-        return ourInstance;
+    private ConnectionHelper() {
     }
 
-    private ConnectionHelper() {
+    public static ConnectionHelper getInstance() {
+        return ourInstance;
     }
 
     /**

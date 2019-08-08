@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightGray"
@@ -12,32 +11,32 @@
         android:layout_height="wrap_content"
         android:background="@color/colorLightGray"
         android:orientation="horizontal"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp">
+        android:paddingLeft="@dimen/widget_ll_padding"
+        android:paddingRight="@dimen/widget_ll_padding">
 
         <ImageView
             android:id="@+id/widget_img_launcher_iv"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/widget_img_launcher_iv_width"
+            android:layout_height="@dimen/widget_img_launcher_iv_height"
             android:layout_gravity="center_vertical"
-            android:src="@mipmap/baseline_cake_black_48"
-            android:contentDescription="cake" />
+            android:contentDescription="@string/widget_img_launcher_iv_cake"
+            android:src="@mipmap/baseline_cake_black_48" />
 
         <TextView
             android:id="@+id/last_viewed_ingredients_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last viewed ingredients"
             android:layout_gravity="center_vertical"
-            android:textColor="@android:color/black"
+            android:padding="@dimen/last_viewed_ingredients_tv_padding"
+            android:text="@string/last_viewed_ingredients_tv_text"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textStyle="bold"
-            android:padding="8dp" />
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/widget_ingredients_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 </LinearLayout>
 

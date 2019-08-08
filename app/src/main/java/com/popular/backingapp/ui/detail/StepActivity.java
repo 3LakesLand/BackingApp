@@ -27,11 +27,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+/**
+ * The class presents the videos of recipe steps via ExoPlayer.
+ */
 public class StepActivity extends AppCompatActivity implements Player.EventListener {
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String USER_AGENT = "BackingApp";
     private static final String STATE_PLAYER_POSITION = "player_position";
-    //private SimpleExoPlayer mPlayer;
+
     @BindView(R.id.player_view)
     PlayerView playerView;
 
@@ -44,6 +47,12 @@ public class StepActivity extends AppCompatActivity implements Player.EventListe
     //for ButterKnife framework
     private Unbinder unbinder;
 
+    /**
+     * The method initializes the MediaSession and the player.
+     *
+     * @param savedInstanceState If non-null, this Activity is being re-constructed
+     *                           from a previous saved state as given here
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,9 +87,6 @@ public class StepActivity extends AppCompatActivity implements Player.EventListe
 
     private void initializePlayer() {
         if (mPlayer == null) {
-
-         /*   TrackSelection.Factory videoTrackSelectionFactory =
-                    new AdaptiveTrackSelection.Factory(new DefaultBandwidthMeter());*/
 
             mPlayer = ExoPlayerFactory.newSimpleInstance(this,
                     new DefaultRenderersFactory(this),

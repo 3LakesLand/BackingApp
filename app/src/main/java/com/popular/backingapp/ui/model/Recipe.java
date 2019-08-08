@@ -1,7 +1,6 @@
 package com.popular.backingapp.ui.model;
 
 
-
 import java.util.List;
 
 /**
